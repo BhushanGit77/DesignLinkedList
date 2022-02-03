@@ -8,7 +8,6 @@
     }
   }
 
-
 class Main{
 
   Node head;
@@ -54,6 +53,34 @@ class Main{
     System.out.println("Remove head");
     ls.remove(0);
     ls.print();
+
+    System.out.println("Reverse list");
+    ls.reverse();
+    ls.print();
+
+  }
+
+  public void reverse() {
+
+    if(this.head.next == null) {
+      return;
+    }
+
+    Node nd = head;
+    head = head.next;
+    while(head != null) {
+      Node newNode = new Node(head.val);
+      newNode.next = nd;
+      head = head.next;
+      nd = newNode;
+    }
+
+    head = nd;
+    Node last = head;
+    for(int i = 0; i < length-1; i++) {
+      last = last.next;
+    }
+    last.next = null;
   }
 
   public void print() {
@@ -72,6 +99,7 @@ class Main{
     
     if(index == 0) {
       head = head.next;
+      length--;
       return;
     }
 
@@ -80,6 +108,7 @@ class Main{
        nd = nd.next;
     }
     nd.next = nd.next.next;
+    length--;
   }
 
   public void insert(int index, int val) {
