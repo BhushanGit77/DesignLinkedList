@@ -24,39 +24,28 @@ class Main{
     Main ls = new Main();
 
     ls.addAtHead(10);
-    Node dumhead = ls.head;
-    while(dumhead != null) {
-      System.out.println(dumhead.val);
-      dumhead = dumhead.next;
-    }
+    ls.print();
 
     System.out.println("Post first append");
     ls.appendAtTail(5);
-    dumhead = ls.head;
-    while(dumhead != null) {
-      System.out.println(dumhead.val);
-      dumhead = dumhead.next;
-    }
+    ls.print();
 
     System.out.println("Post Second append");
     ls.appendAtTail(16);
-    dumhead = ls.head;
-    while(dumhead != null) {
-      System.out.println(dumhead.val);
-      dumhead = dumhead.next;
-    }
+    ls.print();
 
     System.out.println("Post first prepend");
     ls.addAtHead(18);
-    dumhead = ls.head;
-    while(dumhead != null) {
-      System.out.println(dumhead.val);
-      dumhead = dumhead.next;
-    }
+    ls.print();
 
     System.out.println("Insert at perticular location");
     ls.insert(10,99);
-    dumhead = ls.head;
+    ls.print();
+  }
+
+  public void print() {
+
+    Node dumhead = head;
     while(dumhead != null) {
       System.out.println(dumhead.val);
       dumhead = dumhead.next;
