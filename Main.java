@@ -39,7 +39,11 @@ class Main{
     ls.print();
 
     System.out.println("Insert at perticular location");
-    ls.insert(10,99);
+    ls.insert(2,99);
+    ls.print();
+
+    System.out.println("Insert at head location");
+    ls.insert(0,5);
     ls.print();
   }
 
@@ -58,9 +62,14 @@ class Main{
       return;
     }
 
+    if(index == 0) {
+      addAtHead(val);
+      return;
+    }
+
     Node ins = new Node(val);
     Node nd = head;
-    for(int i = 0; i < index; i++) {
+    for(int i = 0; i < index-1; i++) {
       nd = nd.next;
     }
 
