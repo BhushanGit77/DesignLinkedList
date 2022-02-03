@@ -1,17 +1,18 @@
-class Main{
-
-  Node head;
-  int length;
-
-  class Node {
+ class Node {
     int val;
     Node next;
 
-    Node(int val) {
+    public Node(int val) {
       this.val = val;
       this.next = null;
     }
   }
+
+
+class Main{
+
+  Node head;
+  int length;
 
   public Main() {
     this.head = null;
