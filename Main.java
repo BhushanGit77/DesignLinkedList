@@ -54,6 +54,30 @@ class Main{
       dumhead = dumhead.next;
     }
 
+    System.out.println("Insert at perticular location");
+    ls.insert(10,99);
+    dumhead = ls.head;
+    while(dumhead != null) {
+      System.out.println(dumhead.val);
+      dumhead = dumhead.next;
+    }
+  }
+
+  public void insert(int index, int val) {
+
+    if(index >= this.length) {
+      return;
+    }
+
+    Node ins = new Node(val);
+    Node nd = head;
+    for(int i = 0; i < index; i++) {
+      nd = nd.next;
+    }
+
+    ins.next = nd.next;
+    nd.next = ins;
+    this.length++;
   }
 
   public void addAtHead(int val) {
@@ -61,7 +85,7 @@ class Main{
     Node nd = new Node(val);
     nd.next = head;
     this.head = nd;
-    length++;
+    this.length++;
   }
 
   public void appendAtTail(int val) {
@@ -73,5 +97,6 @@ class Main{
     }
     Node lastNode = new Node(val);
     nd.next = lastNode;
+    this.length++;
   }
 }
