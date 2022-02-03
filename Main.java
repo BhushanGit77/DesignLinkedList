@@ -45,6 +45,14 @@ class Main{
       dumhead = dumhead.next;
     }
 
+    System.out.println("Post first prepend");
+    ls.addAtHead(18);
+    dumhead = ls.head;
+    while(dumhead != null) {
+      System.out.println(dumhead.val);
+      dumhead = dumhead.next;
+    }
+
   }
 
   public void addAtHead(int val) {
