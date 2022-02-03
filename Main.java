@@ -45,6 +45,15 @@ class Main{
     System.out.println("Insert at head location");
     ls.insert(0,5);
     ls.print();
+
+    System.out.println("Remove at perticular location");
+    ls.remove(2);
+    ls.print();
+
+    
+    System.out.println("Remove head");
+    ls.remove(0);
+    ls.print();
   }
 
   public void print() {
@@ -54,6 +63,23 @@ class Main{
       System.out.println(dumhead.val);
       dumhead = dumhead.next;
     }
+  }
+
+  public void remove(int index) {
+    if(index >= this.length) {
+      return;
+    }
+    
+    if(index == 0) {
+      head = head.next;
+      return;
+    }
+
+    Node nd = head;
+    for(int i = 0; i < index-1; i++) {
+       nd = nd.next;
+    }
+    nd.next = nd.next.next;
   }
 
   public void insert(int index, int val) {
